@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    volumes:
+    # /django is the workdir from the Dockerfile
+      - .:/django
+    # Define ports so we can access the container
+    ports:
+    # Port 8000 from your computer with Port 8000 of the container
+      - 8000:8000
+    # name of the image
+    image: app:imageName-django
+    container_name: sturdy_container
+    # why 0.0.0.0 and not 127.0.0.1?
+    command: python manage.py runserver 0.0.0.0:8000
+
