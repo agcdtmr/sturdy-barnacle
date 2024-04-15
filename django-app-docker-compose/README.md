@@ -1,14 +1,11 @@
-# sturdy-barnacle
+# Build and run a Django application using Docker compose
 
 
-## How to run
+## Getting Started
 
-- docker-compose build
-- docker-compose run --rm app django-admin startproject core .
-- docker-compose up
-
-http://127.0.0.1:8000
-http://localhost:8000
+- Clone the [repo](https://github.com/agcdtmr/sturdy-barnacle)
+- `cd sturdy-barnacle/django-app-docker-compose`
+- Follow the [documentation]()
 
 
 ## Creating a Django project
@@ -23,6 +20,6 @@ http://localhost:8000
 
 ## Questions
 
-- 
+- What's the point of using Docker Compose file
 - What is yaml?
 - why 0.0.0.0 and not 127.0.0.1?
