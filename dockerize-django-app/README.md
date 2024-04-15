@@ -114,6 +114,8 @@ Solution: Activate the virtual environment (venv) before running the container. 
 
 ## Questions while implementing this task
 
-- I've installed Python 12, now I have two Python files
+- I've installed Python 12, now I have two Python files, shall I uninstall the other Python version?
+- What is SSH? Why do I need it to connect to github?
+- What is Python virtual environment?
 - Why I need to run `python manage.py migrate`
 - Is this state like in terraform?
