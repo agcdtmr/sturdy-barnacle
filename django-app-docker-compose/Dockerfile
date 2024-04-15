@@ -3,6 +3,7 @@ FROM python:3.12
 
 # Ensure Python outputs everything that's printed inside the application
 # Any errors logs sends straight to the terminal, we get the message straight away
+# 1 means non empty value
 ENV PYTHONUNBUFFERED=1
 
 # Set working directory in the container
@@ -11,7 +12,7 @@ WORKDIR /django
 # Copy the requirements file into the container
 COPY requirements.txt requirements.txt
 
-#
+# Upgrade pip
 RUN pip install --upgrade pip
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
