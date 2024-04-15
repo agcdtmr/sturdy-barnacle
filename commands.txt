@@ -1,0 +1,14 @@
+Part#1: dockerize-django-app
+docker build --tag python-django .
+docker run --publish 8000:8000 python-django
+
+Part#2: django-app-docker-compose
+docker-compose build
+docker-compose run --rm app django-admin startproject core .
+docker-compose up
+
+Part#3: postgresql-mysql-django-docker-compose
+docker-compose build
+docker-compose run --rm app django-admin startproject core .
+docker-compose up
+docker exec -it <containerName> /bin/bash
