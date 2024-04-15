@@ -1,26 +1,28 @@
 # Dockerize a Python Django App
 
-## How to run
+## Getting Started
 
-- cd sturdy-barnacle/dockerize-django-app
-- First, setup your Python virtual env locally. See the documentation how to do that.
-
+- Clone the [repo](https://github.com/agcdtmr/sturdy-barnacle)
+- `cd sturdy-barnacle/dockerize-django-app`
+- First, setup your Python virtual env locally. See the [documentation](https://anj.hashnode.dev/dockerize-a-python-django-app) how to do that.
+- Build and running the container
+```
 $ cd <dockerize-django-app name>
 $ docker build -tag <python-django-app or containerName> . 
 $ docker run -it -p 8000:8000 <python-django-app or containerName>
+```
 
+- After you do this, you can go to http://127.0.0.1:8000/ or http://localhost:8000 in your browser to see your dockerized app.
 
-To see what Docker containers are running on your system (with their IDs):
-
+- To see what Docker containers are running on your system (with their IDs):
+```
 $ docker ps -a
+```
 
-To stop your Docker container:
-
+- To stop your Docker container:
+```
 $ docker stop container_id
-
-
-Follow this documentation further.
-
+```
 
 
 ## ToDos: Creating a Django project
