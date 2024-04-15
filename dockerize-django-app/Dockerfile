@@ -22,7 +22,7 @@ COPY requirements.txt requirements.txt
 # # Update package index and install Nano
 # RUN apt-get update && apt-get install -y nano
 
-#
+# # Upgrade pip
 RUN pip install --upgrade pip
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
