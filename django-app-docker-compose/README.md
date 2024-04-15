@@ -1,5 +1,6 @@
 # sturdy-barnacle
 
+
 ## How to run
 
 - docker-compose build
@@ -22,5 +23,6 @@ http://localhost:8000
 
 ## Questions
 
+- 
 - What is yaml?
 - why 0.0.0.0 and not 127.0.0.1?
