@@ -117,5 +117,4 @@ Solution: Activate the virtual environment (venv) before running the container. 
 ## Questions while implementing this task
 
 - I've installed Python 12, now I have two Python files
-- Why I need to run `python manage.py migrate`
-- Is this state like in terraform?
+- Why I need to run `python manage.py migrate`, is this state like in terraform?
