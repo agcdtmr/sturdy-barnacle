@@ -12,6 +12,8 @@ $ docker build -tag <python-django-app or containerName> .
 $ docker run -it -p 8000:8000 <python-django-app or containerName>
 ```
 
+- After you do this, you can go to http://127.0.0.1:8000/ or http://localhost:8000 in your browser to see your dockerized app.
+
 - To see what Docker containers are running on your system (with their IDs):
 ```
 $ docker ps -a
