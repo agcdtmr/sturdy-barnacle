@@ -23,10 +23,10 @@ ERROR: Could not find a version that satisfies the requirement pyscopg2-binary>=
 failed to solve: process "/bin/sh -c pip install --no-cache-dir -r requirements.txt" did not complete successfully: exit code: 1
 ```
 
-Solution:
-Issue: The error indicates that the required version of psycopg2-binary is not available.
-Resolution: Check for the latest available version of psycopg2-binary.
-Recommended Action: Use psycopg2-binary>=2.9 instead of psycopg2-binary>=2.9.9 in your requirements file to ensure compatibility.
+- Solution:
+- Issue: The error indicates that the required version of psycopg2-binary is not available.
+- Resolution: Check for the latest available version of psycopg2-binary.
+- Recommended Action: Use psycopg2-binary>=2.9 instead of psycopg2-binary>=2.9.9 in your requirements file to ensure compatibility.
 
 ## Questions
 
