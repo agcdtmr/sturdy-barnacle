@@ -97,7 +97,7 @@ Error: When running a Docker container with a Django application, an ImportError
 Solution: Activate the virtual environment (venv) before running the container. Ensure Django is installed within the virtual environment and rerun pip freeze > requirements.txt after resolving the venv issue.
 
 
-## Questions while implementing this task
+## Questions while implementing this project
 
 - I've installed Python 12, now I have two Python files, shall I uninstall the other Python version?
 - What is SSH? Why do I need it to connect to github?
