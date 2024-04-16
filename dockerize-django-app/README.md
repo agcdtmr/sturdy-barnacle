@@ -8,7 +8,7 @@
 - Follow the [step-by-step guide](https://anj.hashnode.dev/dockerize-a-python-django-app)
 
 
-## ToDos: Creating a Django project
+## ToDos
 
 - [x] Dockerize a Django application [Beginners Guide](https://www.youtube.com/watch?v=W5Ov0H7E_o4&list=PLOLrQ9Pn6cazCfL7v4CdaykNoWMQymM_C&index=1)
 - [x] Write a documentation inspired by this [blog](https://dockerize.io/guides/python-django-guide)
