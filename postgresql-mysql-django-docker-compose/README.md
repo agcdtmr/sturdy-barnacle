@@ -1,4 +1,4 @@
-# sturdy-barnacle
+# Setting up PostgreSQL with Django App using Docker Compose
 
 ## Getting Started
 
