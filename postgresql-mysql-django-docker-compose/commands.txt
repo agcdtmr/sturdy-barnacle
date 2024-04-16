@@ -1,0 +1,9 @@
+docker-compose build
+
+docker-compose run --rm app django-admin startproject core .
+
+docker-compose up
+
+#### exec means run a command in one of your container
+#### -it means interactive
+docker exec -it sturdy_container /bin/bash
