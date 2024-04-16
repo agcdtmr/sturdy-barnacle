@@ -4,13 +4,14 @@
 
 - Clone the [repo](https://github.com/agcdtmr/sturdy-barnacle)
 - `cd sturdy-barnacle/postgresql-mysql-django-docker-compose`
-- Follow the [documentation]()
+- Follow the [documentation](https://anj.hashnode.dev/setting-up-postgresql-with-django-app-using-docker-compose)
 
 
 ## ToDos
 
-- [x]  [Build and start a Django project with Docker Compose](https://www.youtube.com/watch?v=aMqs_y6dZw4&list=PLOLrQ9Pn6cazCfL7v4CdaykNoWMQymM_C&index=2&pp=iAQB)
+- [x] [Build and start a Django project with Docker Compose](https://www.youtube.com/watch?v=aMqs_y6dZw4&list=PLOLrQ9Pn6cazCfL7v4CdaykNoWMQymM_C&index=2&pp=iAQB)
 - [x] Write a documentation
+- [x] Edit cover image
 
 ## Error and Solution
 
