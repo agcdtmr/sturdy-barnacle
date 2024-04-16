@@ -15,7 +15,7 @@
 - [ ] Bonus 1: SSL certificate for HTTPS
 
 
-## Errors and Solutions
+## Error and Solution
 
 1. 
 `django-admin startproject mysite
