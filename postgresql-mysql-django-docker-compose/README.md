@@ -1,4 +1,4 @@
-# sturdy-barnacle
+# Setting up PostgreSQL with Django App using Docker Compose
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ ERROR: Could not find a version that satisfies the requirement pyscopg2-binary>=
 failed to solve: process "/bin/sh -c pip install --no-cache-dir -r requirements.txt" did not complete successfully: exit code: 1
 ```
 
-- Solution:
+#### Solution:
 - Issue: The error indicates that the required version of psycopg2-binary is not available.
 - Resolution: Check for the latest available version of psycopg2-binary.
 - Recommended Action: Use psycopg2-binary>=2.9 instead of psycopg2-binary>=2.9.9 in your requirements file to ensure compatibility.
@@ -37,6 +37,9 @@ failed to solve: process "/bin/sh -c pip install --no-cache-dir -r requirements.
 - How do you know if the app and db are connected? If we can apply the migrations, we can run the database.
 - How to do the migrations? Use `docker exec -it <containerName> /bin/bash` and run `python manage.py migrate`
 - [what does " python manage.py migrate " in django do exactly?](https://stackoverflow.com/questions/62311073/what-does-python-manage-py-migrate-in-django-do-exactly)
+- Why postgres needs psycopg2-binary
+- Database setting.py ----'ENGINE': 'django.db.backends.postgresql'
+- What is Django and db migrations?
 
 
 ## Resources
