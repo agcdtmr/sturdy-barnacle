@@ -1,0 +1,57 @@
+# what version of docker compose, adjust to the latest version
+version: '3.8'
+services:
+
+  # Redis
+  redis:
+    image: redis:alpine
+    container_name: redis
+
+  # Database Postgres
+  db:
+    image: postgres
+    # ./data/db: This is to connect and save the database data in our computer
+    # /var/lib/postgresql/data: the data is located from this containerized db
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    container_name: postgres_db_for
+
+  # Django Application
+  app:
+    build: .
+    volumes:
+    # /django is the workdir from the Dockerfile
+      - .:/django
+    # Define ports so we can access the container
+    ports:
+    # Port 8000 from your computer with Port 8000 of the container
+      - 8000:8000
+    # name of the image
+    image: app:imageName-django
+    container_name: django_app_container
+    # why 0.0.0.0 and not 127.0.0.1?
+    command: python manage.py runserver 0.0.0.0:8000
+    # Define the running order
+    depends_on:
+      - db
+  
+  # Celery
+  celery:
+    restart: always
+    build:
+      context: .
+    # When celery setup a task, it provides info in the terminal (turn this off in prod)
+    command: celery -A core worker -l INFO
+    volumes:
+    # /django is the workdir from the Dockerfile
+      - .:/django
+    container_name: celery
+    depends_on:
+    # all of the ones below should start before celery
+      - db
+      - redis
+      - app
