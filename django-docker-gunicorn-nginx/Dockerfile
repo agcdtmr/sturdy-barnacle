@@ -6,16 +6,17 @@ FROM python:3.12-alpine
 # 1 means non empty value
 ENV PYTHONUNBUFFERED=1
 
+# Upgrade pip
+RUN pip install --upgrade pip
+
 # Copy the requirements file into the container
 COPY requirements.txt requirements.txt
 
-# Upgrade pip
-RUN pip install --upgrade pip
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
 # Copy the all files into the container
 COPY . .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Set working directory in the container
 WORKDIR /django
