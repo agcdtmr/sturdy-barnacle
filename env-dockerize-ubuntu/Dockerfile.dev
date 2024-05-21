@@ -1,0 +1,23 @@
+# Use the official Ubuntu image from the Docker Hub
+FROM ubuntu:latest
+
+# Set environment variables for non-interactive apt-get
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update and install necessary packages
+RUN apt-get update && \
+    apt-get install -y sudo vim && \
+    apt-get clean
+
+# Create a user with the UID and GID provided in the .env file
+ARG UID
+ARG GID
+RUN groupadd -g $GID user && \
+    useradd -m -u $UID -g $GID -s /bin/bash user && \
+    echo 'user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+# Set the default user
+USER user
+
+# Set the default shell to bash
+CMD ["bash"]
