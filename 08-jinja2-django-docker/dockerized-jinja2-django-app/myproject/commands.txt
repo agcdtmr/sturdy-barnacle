@@ -1,0 +1,10 @@
+docker-compose build
+docker-compose run --rm app django-admin startproject core .
+docker-compose up
+
+
+python manage.py makemigrations
+python manage.py migrate
+# If you want to give the migration(s) a meaningful name instead of a generated one, you can use the makemigrations --name option:
+python manage.py makemigrations --name changed_my_model your_app_label
+
