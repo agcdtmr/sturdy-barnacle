@@ -1,0 +1,23 @@
+# what version of docker compose, adjust to the latest version
+version: '3.8'
+# here we define the services we want to run in our container
+services:
+  app:
+# "." refers to where the Dockerfile is located
+    build: .
+    volumes:
+    # call here the folder that resides on the OS within the container
+    # "." the folders in the local machine, ":" match/mirror/link to the container folder
+    # /django is the workdir from the Dockerfile
+      - .:/django
+    # Define ports so we can access the container
+    ports:
+    # Port 8000 from your computer with Port 8000 of the container
+      - 8000:8000
+    # name of the image
+    # image: <name of app>:<tag or imageName>
+    image: app:django
+    container_name: sturdy_container
+    # represen all of them in the service and expose it in port 8000
+    command: python manage.py runserver 0.0.0.0:8000
+

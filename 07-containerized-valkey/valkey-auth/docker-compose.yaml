@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  valkey:
+    build: .
+    container_name: valkey-container
+    ports:
+      - "6379:6379"
+    environment:
+      - VALKEY_PASSWORD=${VALKEY_PASSWORD}
+    command: ["valkey-server", "/etc/valkey/valkey.conf"]
+    depends_on:
+      - valkey-init
+
+  valkey-init:
+    image: busybox
+    container_name: valkey-init-container
+    volumes:
+      - ./valkey.acl:/etc/valkey/valkey.acl
+    entrypoint: >
+      sh -c "
+      sleep 10 &&
+      valkey-cli ACL SETUSER ${VALKEY_USER} on > ${VALKEY_PASSWORD} ~* +@all &&
+      valkey-cli ACL SAVE"

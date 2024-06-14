@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  valkey:
+    container_name: valkey
+    hostname: valkey
+    image: valkey/valkey:latest
+    build: .
+    volumes:
+      - ./conf/valkey.conf:/usr/local/etc/valkey/valkey.conf
+      - ./data:/data
+    command: ["valkey-server", "/usr/local/etc/valkey/valkey.conf"]
+    healthcheck:
+      test: ["CMD-SHELL", "valkey-cli ping | grep PONG"]
+      interval: 1s
+      timeout: 3s
+      retries: 5
+    ports:
+      - 6379:6379
+    networks:
+      - valkey-net
+
+
+# https://stackoverflow.com/questions/33142139/error-could-not-connect-to-redis-at-redis6379-name-or-service-not-known
+# Note that the Docker driver uses the bridge or the overlay built-in network drivers to create a Docker network. You can also install and use a third-party network driver.
+# The difference is that bridge networks are isolated on a single Docker Engine installation, while overlay networks span multiple Docker hosts, each running an engine.
+networks:
+  valkey-net:
+    driver: bridge
