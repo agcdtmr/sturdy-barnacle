@@ -1,6 +1,7 @@
 from jinja2 import Environment
 from django.contrib.staticfiles.storage import staticfiles_storage
 from jinja2 import Environment, contextfunction
+from django.urls import reverse
 
 @contextfunction
 def light_or_dark_mode(context, element):
@@ -26,14 +27,15 @@ def environment(**options):
     env = Environment(**options)
     env.globals.update({
         'light_or_dark_mode': light_or_dark_mode,
+        'url': reverse,
     })
     return env
 
 
 ## Default Config
-
-
 # from jinja2 import Environment
+# from django.contrib.staticfiles.storage import staticfiles_storage
+# from django.urls import reverse
 
 # Option #1
 # def environment(**options):
@@ -42,7 +44,7 @@ def environment(**options):
 #     # env.add_extension('jinja2.ext.with_')
 #     return env
 
-# Option #2
+## Option #2
 # def environment(**options):
 #     env = Environment(**options)
 #     env.globals.update({
