@@ -1,0 +1,20 @@
+# what version of docker compose, adjust to the latest version
+version: '3.8'
+# here we define the services we want to run in our container
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: myproject
+      POSTGRES_USER: myproject
+      POSTGRES_PASSWORD: myproject
+
+  app:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
