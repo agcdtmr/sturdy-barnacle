@@ -1,3 +1,4 @@
+cd 08-jinja2-django-docker/dockerized-jinja2-django-app/myproject/
 docker-compose build
 docker-compose run --rm app django-admin startproject core .
 docker-compose up

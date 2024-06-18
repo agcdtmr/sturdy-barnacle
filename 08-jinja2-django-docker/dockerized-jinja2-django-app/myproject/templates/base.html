@@ -6,12 +6,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>{% block title %}Django with Jinja2{% endblock %}</title>
 </head>
 <body>
-    {% set element = 'body' %}
-    {{ light_or_dark_mode(element)|safe }}
-    <h1>Welcome to the Home Page</h1>
-    <p>This is a simple Jinja2 template in Django.</p>
+    <header>
+        {% include 'navbar.html' %}
+        <h1>Dockerized Django with Jinja2</h1>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Anj</p>
+    </footer>
 </body>
 </html>
+
