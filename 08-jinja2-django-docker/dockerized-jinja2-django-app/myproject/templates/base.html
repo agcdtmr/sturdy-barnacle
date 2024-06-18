@@ -9,20 +9,15 @@
     <title>{% block title %}Django with Jinja2{% endblock %}</title>
 </head>
 <body>
-    {{ light_or_dark_mode(element)|safe }}
-
     <header>
-        <h1>Django with Jinja2</h1>
-        <nav>
-            <a href="{{ url('home') }}">Home</a>
-            <a href="{{ url('about') }}">About</a>
-        </nav>
+        {% include 'navbar.html' %}
+        <h1>Dockerized Django with Jinja2</h1>
     </header>
     <main>
         {% block content %}{% endblock %}
     </main>
     <footer>
-        <p>&copy; 2023 Django with Jinja2</p>
+        <p>&copy; 2024 Anj</p>
     </footer>
 </body>
 </html>

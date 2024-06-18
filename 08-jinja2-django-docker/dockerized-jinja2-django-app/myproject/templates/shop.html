@@ -1,0 +1,26 @@
+<!-- templates/product_list.html -->
+
+
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <h2>Shop</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.name }} - ${{ product.price }}
+                {% if product.in_stock %}
+                    <span style="color: green;">(In Stock)</span>
+                {% else %}
+                    <span style="color: red;">(Out of Stock)</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
+
