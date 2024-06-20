@@ -1,4 +1,4 @@
-# Light and Dark mode
+# Configuring Light and Dark mode using Jinja2
 
 1. **Create a Jinja2 Environment Configuration:**
    Ensure you have a `jinja2_env.py` file set up to manage Jinja2 configurations.
