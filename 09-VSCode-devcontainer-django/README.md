@@ -16,7 +16,7 @@ This VSCode dev container setup for the project includes the following configura
 
 2. **Docker and Docker Compose**:
    - Uses `../docker-compose.yml` to define and run the multi-container application.
-   - SSL Certificates for Development: At `/.docker/celery/Dockerfile`, if the DEV_ENV build argument is set to true
+   - At `/.docker/celery/Dockerfile`, it sets the default command to run the Django development server using Uvicorn and generates SSL Certificates for development environment
 
 3. **Service**:
    - The primary service is defined as `app`.
