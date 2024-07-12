@@ -17,7 +17,7 @@ This VSCode dev container setup for a django, pg, celery, valkey and rmq project
 
 2. **Docker and Docker Compose**:
    - Uses `../docker-compose.yml` to define and run the multi-container application.
-   - At `/.docker/celery/Dockerfile`, it sets the default command to run the Django development server using Uvicorn and generates SSL Certificates for development environment
+   - At `/.docker/uvicorn/Dockerfile`, it sets the default command to run the Django development server using Uvicorn and generates SSL Certificates for development environment
 
 
 
