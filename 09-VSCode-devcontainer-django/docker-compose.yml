@@ -1,0 +1,76 @@
+services:
+  app:
+    container_name: "django"
+    build: 
+      context: . 
+      dockerfile: .docker/uvicorn/Dockerfile #Find Dockerfile in this directory
+      args:
+        DEV_ENV: ${DEV_ENV:-false}  # Use an environment variable to determine if it's in dev mode
+        SSL_KEYFILE: $SSL_KEYFILE
+        SSL_CERTFILE: $SSL_CERTFILE
+    command: >
+      uvicorn app.asgi:application 
+      --host 0.0.0.0 
+      --port 8000 
+      --ssl-keyfile $SSL_KEYFILE 
+      --ssl-certfile $SSL_CERTFILE
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - valkey
+      - rabbitmq
+  worker:
+    container_name: "celery"
+    build:
+      context: .
+      dockerfile: .docker/celery/Dockerfile
+    command: 'celery -A app worker -l debug'
+    volumes:
+      - ./:/app/
+    env_file:
+      - .env
+    depends_on:
+      - app
+
+  db: 
+    image: postgres:13
+    container_name: "postgres"
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+
+  valkey:
+    image: valkey/valkey
+    container_name: "valkey"
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: "rabbitmq"
+    env_file:
+      - .env
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+      - rabbitmq_log:/var/log/rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"  # RabbitMQ standard port
+      - "15672:15672"  # RabbitMQ management UI
+
+volumes:
+  postgres_data:
+  rabbitmq_data:
+  rabbitmq_log:
+

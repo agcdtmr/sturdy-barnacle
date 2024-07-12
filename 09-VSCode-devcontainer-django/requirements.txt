@@ -1,0 +1,16 @@
+Django
+uvicorn
+pytz
+psycopg2-binary
+python-dotenv
+celery
+django-celery-beat
+django-celery-results
+django-robots>=4.0.0
+django-bootstrap-v5
+jira
+pylint-django
+valkey
+django-sslserver-v2
+django-redis 
+redis

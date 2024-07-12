@@ -1,0 +1,59 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/postgres
+{
+	"name": "VSCode Dev Container: Local Development Environment Configurations",
+	"dockerComposeFile": "../docker-compose.yml",
+	"build": {
+		"args": {
+			"DEV_ENV": "true"
+		}
+	},
+	"service": "app",
+	"workspaceFolder": "/app",
+	
+	"initializeCommand": "cp .devcontainer/.env.dev .env",
+	"postCreateCommand": "python manage.py migrate;",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"batisteo.vscode-django",
+				"bibhasdn.django-html",
+				"shamanu4.django-intellisense",
+				"ms-python.python",
+				"ms-python.pylint",
+				"GitLab.gitlab-workflow",
+				// "mechatroner.rainbow-csv",
+				// "janisdd.vscode-edit-csv",
+				"ms-python.vscode-pylance",
+				"ms-azuretools.vscode-docker",
+			],
+			"settings": {
+				"python.pythonPath": "/usr/local/bin/python"
+			}
+		}
+	},
+	"features": {
+		// "ghcr.io/devcontainers/features/aws-cli:1": {},
+		// "ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/python:1": {},
+		// "ghcr.io/devcontainers/features/powershell:1": {},
+		"ghcr.io/devcontainers-contrib/features/bash-command:1": {},
+		"ghcr.io/devcontainers-contrib/features/devcontainers-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/homebrew-package:1": {},
+		"ghcr.io/devcontainers-contrib/features/prettier:1": {},
+		// 
+		"ghcr.io/devcontainers-contrib/features/pylint:2": {},
+		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
+		"ghcr.io/devcontainers-contrib/features/jira-cli:1": {}
+		
+	},
+
+	"forwardPorts": [
+		8000, // Port for Django
+		5432, // Port for PostgreSQL
+		6379,  // Port for Valkey
+		5672, // Port for RabbitMQ (AMQP)
+		15672 // Port for RabbitMQ Management UI
+	]
+}
