@@ -41,11 +41,5 @@ This VSCode dev container setup for a django, pg, celery, valkey and rmq project
      - `5672`: RabbitMQ (AMQP)
      - `15672`: RabbitMQ Management UI
 
-### Additional Setup Details
-
-- **Environment Setup**:
-  - Initializes the environment by copying the environment configuration file.
-- **Database Migrations**:
-  - Runs necessary migrations to set up the database schema after container creation.
 
 This setup ensures a consistent development environment with all necessary tools, extensions, and configurations pre-installed and ready to use.
