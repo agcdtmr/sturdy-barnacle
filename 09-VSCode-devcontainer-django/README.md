@@ -9,24 +9,17 @@
 
 ### Devcontainer Setup Summary
 
-This VSCode dev container setup for the project includes the following configurations and components:
+This VSCode dev container setup for a django, pg, celery, valkey and rmq project includes the following configurations and components:
 
-1. **Configuration File**: 
+1. **Configuration Files**: 
    - `devcontainer.json` is the primary configuration file.
+   - **Initialize Command**: Copies `.devcontainer/.env.dev` to `.env` for environment setup.
 
 2. **Docker and Docker Compose**:
    - Uses `../docker-compose.yml` to define and run the multi-container application.
    - At `/.docker/celery/Dockerfile`, it sets the default command to run the Django development server using Uvicorn and generates SSL Certificates for development environment
 
-3. **Service**:
-   - The primary service is defined as `app`.
 
-4. **Workspace**:
-   - The workspace folder inside the container is set to `/app`.
-
-5. **Commands**:
-   - **Initialize Command**: Copies `.devcontainer/.env.dev` to `.env` for environment setup.
-   - **Post Create Command**: Runs Django migrations using `python manage.py migrate`.
 
 6. **VSCode Customizations**:
    - **Extensions**:
