@@ -9,7 +9,7 @@
 
 ### Devcontainer Setup Summary
 
-This VSCode dev container setup for a django, pg, celery, valkey and rmq project includes the following configurations and components:
+This VSCode dev container setup for a Django, PostgreSQL, Celery, Valkey, and RabbitMQ project includes the following configurations and components:
 
 1. **Configuration Files**: 
    - `devcontainer.json` is the primary configuration file.
@@ -20,8 +20,7 @@ This VSCode dev container setup for a django, pg, celery, valkey and rmq project
    - At `/.docker/uvicorn/Dockerfile`, it sets the default command to run the Django development server using Uvicorn and generates SSL Certificates for development environment
 
 
-
-6. **VSCode Customizations**:
+3. **VSCode Customizations**:
    - **Extensions**:
      - Django-related extensions for HTML, IntelliSense, and general support.
      - Python extensions for linting and code analysis.
@@ -30,10 +29,10 @@ This VSCode dev container setup for a django, pg, celery, valkey and rmq project
    - **Settings**:
      - Sets the Python interpreter path to `/usr/local/bin/python`.
 
-7. **Development Features**:
+4. **Development Features**:
    - Git, Python, Bash commands, Devcontainers CLI, Homebrew package management, Prettier, Pylint, Zsh plugins, and Jira CLI are included.
 
-8. **Port Forwarding**:
+5. **Port Forwarding**:
    - Forwards necessary ports for development:
      - `8000`: Django
      - `5432`: PostgreSQL
