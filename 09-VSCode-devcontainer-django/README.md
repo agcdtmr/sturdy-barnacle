@@ -2,6 +2,6 @@
 
 ## Terminologies
 - pg: PostgreSQL
-- celery: Celery
-- valkey: [valkey](https://valkey.io/)
+- celery: [Celery](https://docs.celeryq.dev/en/stable/index.html)
+- valkey: [Valkey](https://valkey.io/)
 - rmq: RabbitMQ
