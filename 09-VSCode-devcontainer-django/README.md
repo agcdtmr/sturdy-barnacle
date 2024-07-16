@@ -6,9 +6,9 @@
 - valkey: [Valkey](https://valkey.io/)
 - rmq: RabbitMQ
 
-To use the repository follow these steps:
 
 ### Setup Instructions
+To use the repository follow these steps:
 
 1. **Clone the Repository**:
    ```sh
