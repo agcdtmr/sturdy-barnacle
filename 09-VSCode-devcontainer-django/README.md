@@ -1,5 +1,11 @@
 # Setup of a Django project with pg, celery, valkey and rmq using VSCode dev containers and docker compose
 
+### Terminologies
+- pg: PostgreSQL
+- celery: [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html)
+- valkey: [Valkey](https://valkey.io/)
+- rmq: RabbitMQ
+
 To use the repository follow these steps:
 
 ### Setup Instructions
