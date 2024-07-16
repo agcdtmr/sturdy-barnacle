@@ -36,7 +36,70 @@ To ensure that the containers are successfully connected and your Django project
    - Ensure Celery tasks are working by running a test task and monitoring its execution via the RabbitMQ Management UI (`http://localhost:15672`).
 
 4. **Valkey Integration**:
-   - Test integration with Valkey by executing and verifying functionality within your Django application that interacts with Valkey's services.
+   To ensure successful integration with Valkey within your Django project setup using VSCode Dev Containers and Docker Compose, try out these tests:
+
+4.1. **Access Valkey Container Terminal**:
+   - Open a terminal session inside the Valkey container to interact directly with its environment.
+     ```sh
+     docker exec -it <valkey-container-id> bash
+     ```
+   - Replace `<valkey-container-id>` with the actual container ID or name of the Valkey container.
+
+4.2. **Basic Connectivity Tests**:
+   - **Ping Test**:
+     - From within the Valkey container, attempt to ping other containers or services (e.g., PostgreSQL, RabbitMQ) to verify network connectivity:
+       ```sh
+       ping <container-name>
+       ```
+       - Replace `<container-name>` with the name or IP address of the container you want to ping (e.g., `postgres`, `rabbitmq`).
+
+3. **Service Endpoint Access**:
+   - Verify that Valkey can access the endpoints of other services:
+     - **PostgreSQL**:
+       - Connect to PostgreSQL from the Valkey container using tools like `psql`:
+         ```sh
+         psql -h <postgres-container-name> -U <postgres-user> <database-name>
+         ```
+         - Replace `<postgres-container-name>`, `<postgres-user>`, and `<database-name>` with your PostgreSQL container name, username, and database name.
+     - **RabbitMQ**:
+       - Ensure Valkey can interact with RabbitMQ's AMQP endpoint. You can check connectivity and queue operations from the Valkey container.
+
+4. **HTTP/HTTPS Endpoint Testing**:
+   - Test Valkey's ability to make HTTP/HTTPS requests to external services or APIs:
+     ```sh
+     curl http://<service-url>
+     curl https://<service-url>
+     ```
+     - Replace `<service-url>` with the URL of the service or API endpoint you want to test.
+
+5. **Monitor Logs**:
+   - Monitor Valkey container logs (`docker logs <valkey-container-id>`) for any errors or issues that may occur during integration tests. Ensure all logs are captured and reviewed for debugging purposes.
+
+#### Example Workflow
+
+Here's an example workflow to test Valkey integration:
+
+1. Access Valkey container terminal:
+   ```sh
+   docker exec -it <valkey-container-id> bash
+   ```
+
+2. Perform ping test:
+   ```sh
+   ping postgres
+   ```
+
+3. Connect to PostgreSQL from Valkey container:
+   ```sh
+   psql -h postgres -U postgres
+   ```
+
+4. Test HTTP endpoint access:
+   ```sh
+   curl https://example.com
+   ```
+
+By following the examples above, you can ensure that Valkey is properly integrated and functioning within your Django project's development environment using VSCode Dev Containers and Docker Compose. Adjust tests and configurations as needed based on your specific application requirements and Valkey's capabilities.
 
 ### Additional Tips
 
