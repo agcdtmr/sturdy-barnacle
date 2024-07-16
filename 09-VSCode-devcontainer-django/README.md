@@ -59,7 +59,7 @@ To ensure that the containers are successfully connected and your Django project
        ```
        - Replace `<container-name>` with the name or IP address of the container you want to ping (e.g., `postgres`, `rabbitmq`).
 
-3. **Service Endpoint Access**:
+4.3. **Service Endpoint Access**:
    - Verify that Valkey can access the endpoints of other services:
      - **PostgreSQL**:
        - Connect to PostgreSQL from the Valkey container using tools like `psql`:
@@ -70,7 +70,7 @@ To ensure that the containers are successfully connected and your Django project
      - **RabbitMQ**:
        - Ensure Valkey can interact with RabbitMQ's AMQP endpoint. You can check connectivity and queue operations from the Valkey container.
 
-4. **Monitor Logs**:
+4.4. **Monitor Logs**:
    - Monitor Valkey container logs (`docker logs <valkey-container-id>`) for any errors or issues that may occur during integration tests. Ensure all logs are captured and reviewed for debugging purposes.
 
 #### Example Workflow
