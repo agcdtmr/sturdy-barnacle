@@ -17,7 +17,7 @@ To use the repository follow these steps:
    ```
 
 2. **Open in VSCode**:
-   - Ensure Docker is installed and running.
+   - Ensure that all [requirements](https://anj.hashnode.dev/set-up-of-a-django-project-with-postgresql-celery-valkey-and-rabbitmq-using-vscode-dev-containers-and-docker-compose#heading-requirements) are installed and running.
    - Open the repository in VSCode.
    - If prompted, reopen the folder in the dev container. VSCode should recognize the `devcontainer.json` and suggest reopening in the container.
 
