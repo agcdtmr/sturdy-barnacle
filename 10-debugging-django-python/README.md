@@ -5,6 +5,7 @@
 
 - [Debugging Django Applications: Tips and Tricks](https://learntube.ai/blog/programming/django/debugging-django-applications-tips-and-tricks/)
 - [Debugging Django applications — everything you need to know](https://unfoldai.com/debugging-django-applications/)
+- [Mastering Django debugging: a complete guide](https://www.auberginesolutions.com/blog/mastering-django-debugging-a-complete-guide/)
 - [How to debug in Django, the good way?](https://stackoverflow.com/questions/1118183/how-to-debug-in-django-the-good-way)
 - [Debugging a Django application](https://sentry.io/answers/debugging-a-django-application/)
 - [Pycharm - Debug Django templates](https://www.jetbrains.com/help/pycharm/debugging-django-template-tutorial.html)
